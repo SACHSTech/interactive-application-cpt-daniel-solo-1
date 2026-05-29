@@ -16,7 +16,13 @@ public class Sketch extends PApplet {
 
     @Override
     public void setup() {
+        fill(154, 205, 248);        // Water Background
+        noStroke();
+        rect(0, 0, 600, 400);
 
+        fill(114, 97, 55); // Gravel Ground
+        stroke(0, 0, 0);
+        rect(0, 250, 600, 200);
     }
 
     @Override
