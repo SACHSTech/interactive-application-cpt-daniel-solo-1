@@ -23,6 +23,10 @@ public class Sketch extends PApplet {
         fill(114, 97, 55); // Gravel Ground
         stroke(0, 0, 0);
         rect(0, 250, 600, 200);
+
+        fill(0,0,0);
+        noStroke();
+        rect(0, 0, 100, 15);
     }
 
     @Override
