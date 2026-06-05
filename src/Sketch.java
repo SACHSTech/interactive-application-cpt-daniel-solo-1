@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 /**
  * Template for programs with Processing graphics output.
@@ -14,17 +15,26 @@ public class Sketch extends PApplet {
         size(600, 400); 
     }
 
+    PImage sunFish;
+    PImage sunFishSuprised;
+
     @Override
     public void setup() {
-        
+
         tankBase();
         trasureChestBase();
+        
+        sunFish = loadImage("images/sunfish-fat.png");
+        sunFishSuprised = loadImage("images/sunfish-fat-ah.png");
 
     }
 
     @Override
     public void draw() {
 
+        image(sunFish, 300, 200, 30, 30);
+
+        
         if (keyPressed){
             if (keyCode == UP){
                 fill(93, 64, 55);           // Treasure Chest Lid
@@ -35,6 +45,9 @@ public class Sketch extends PApplet {
                 stroke(0,0,0);
                 rect(405, 184, 90, 50);
 
+                fill(3, 155, 229);
+                stroke(0,0,0);
+                ellipse(450, 235, 15, 15);
             }
 
             if (keyCode == DOWN){
