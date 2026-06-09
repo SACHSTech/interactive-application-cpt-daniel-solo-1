@@ -3,6 +3,7 @@ import processing.core.PImage;
 
 /**
  * This is a small simulation of a fish in a fish tank, where you use various buttons on the keyboard to interact with the background elements that would make the fish react in different ways
+ * 
  * @author daniel-solo
  */
 public class Sketch extends PApplet {
@@ -18,6 +19,8 @@ public class Sketch extends PApplet {
     PImage sunFish;
     PImage sunFishSurprised;
     PImage sunFishLeft;
+    PImage sunFishSurprisedLeft;
+    PImage sunFishRight;
 
     @Override
     public void setup() {
@@ -25,12 +28,10 @@ public class Sketch extends PApplet {
         sunFish = loadImage("images/sunfish-fat.png");
         sunFishSurprised = loadImage("images/sunfish-fat-ah.png");
         sunFishLeft = loadImage("images/sunfish-fat-left.png");
-
+        sunFishSurprisedLeft = loadImage("images/sunfish-fat-ah-left");
+        sunFishRight = loadImage("images/sunfish-fat-right");
 
     }
-
-            // make fish flip at 550 in x axis
-
         float sunFishX = 250;
         float sunFishSpeedX = 4;
 
@@ -101,26 +102,16 @@ public class Sketch extends PApplet {
     private void clamBase(){
         fill(157, 88, 214);         // clam bottom
         stroke(0,0,0);
-        rect(50,270,200,50);
+        rect(50,280,200,50);
         fill(156, 117, 189);
         stroke(0,0,0);
-        rect(40, 250, 220, 20);
-        //fill(156, 117, 189);        // clam top
-        //stroke(0,0,0);
-        //rect(40, 230, 220, 20);
-        //fill(157, 88, 214);
-        //stroke(0,0,0);
-        //rect(50,190,200,40);
-
-        char myCharVariable = 'A';
-
-        //if (keyPressed){
-            //if (key == A){
-                //fill(255, 255, 255);        // Pearl inside
-                //stroke(0,0,0);
-                //ellipse(150, 110, 40, 40);
-            //}
-        //}
+        rect(40, 260, 220, 20);
+        fill(156, 117, 189);
+        stroke(0,0,0);
+        rect(40, 240, 220, 20);
+        fill(157, 88, 214);
+        stroke(0,0,0);
+        rect(50,200,200,40);
 
     }
     
@@ -144,10 +135,23 @@ public class Sketch extends PApplet {
         if (sunFishX >= 550){
             sunFishSpeedX = sunFishSpeedX * -1;
             sunFish = sunFishLeft;
+
+            if (keyPressed){
+                if (keyCode == UP){
+                    sunFish = sunFishSurprisedLeft;
+                }
+            }
         }
         if (sunFishX <= 0){
             sunFishSpeedX = (sunFishSpeedX * -1) * 1;
-            image(sunFish, 0, 150, 50, 50);
+            
+            
+
+            if (keyPressed){
+                if (keyCode == UP){
+                    
+                }
+            }
         }
     }
 
@@ -156,7 +160,5 @@ public class Sketch extends PApplet {
         fill(13, 71, 161);
         text("UP/DOWN = Chest", 30, 50);
     }
-
-    /** Additional helper methods below */
 
 }
