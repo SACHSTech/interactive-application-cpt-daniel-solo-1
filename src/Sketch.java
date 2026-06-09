@@ -45,6 +45,7 @@ public class Sketch extends PApplet {
         tankBase();
         treasureChestBase();
         clamBase();
+
         instructions();
 
         if (keyPressed){
@@ -158,7 +159,7 @@ public class Sketch extends PApplet {
     private void instructions(){
         textSize(30);
         fill(13, 71, 161);
-        text("UP/DOWN = Chest", 30, 50);
+        text("UP/DOWN = Open & Close Chest", 30, 50);
     }
 
 }
