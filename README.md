@@ -12,6 +12,8 @@ Once you are ready to submit, replace the contents of this README.md file with:
 
 ## a screenshot of your program in action
 
+![Screenshot Here](FishSimScreenshot)
+
 ## a brief description of your program
 - In this simulation, a fish is swimming inside a tank with a treasure chest and an oyster shell inside the tank.
 - The fish upon hitting a glass wall will immediatly turn around and go the other way, and vice verca.
@@ -24,7 +26,7 @@ Once you are ready to submit, replace the contents of this README.md file with:
 - Another problem is the graphics of the fish not being correct when it bounces two times, being more layered and in the wrong direction
 - I was planning to have the oyster shell a role to the speed of the fish
 - it would open its shell with a pearl inside, which slows the fish down in awe
-- I also originally planned to have multiple fish, with each one a slightly different speed, and different surprised speeds
+- I also originally planned to have multiple fish, with each one a slightly different speed, and different surprised speeds.
 
 ## an attribution section for any external assets used
 
