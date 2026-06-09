@@ -12,7 +12,7 @@ Once you are ready to submit, replace the contents of this README.md file with:
 
 ## a screenshot of your program in action
 
-![Screenshot Here](FishSimScreenshot)
+![Screenshot Here](FishSimScreenshot.png)
 
 ## a brief description of your program
 - In this simulation, a fish is swimming inside a tank with a treasure chest and an oyster shell inside the tank.
