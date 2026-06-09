@@ -3,7 +3,7 @@ import processing.core.PImage;
 
 /**
  * This is a small simulation of a fish in a fish tank, where you use various buttons on the keyboard to interact with the background elements that would make the fish react in different ways
- * @author Your Name
+ * @author daniel-solo
  */
 public class Sketch extends PApplet {
     public static void main(String[] args) {
@@ -17,22 +17,27 @@ public class Sketch extends PApplet {
 
     PImage sunFish;
     PImage sunFishSurprised;
+    PImage sunFishLeft;
 
     @Override
     public void setup() {
 
         tankBase();
         treasureChestBase();
+        clamBase();
+        instructions();
         
         sunFish = loadImage("images/sunfish-fat.png");
         sunFishSurprised = loadImage("images/sunfish-fat-ah.png");
+        sunFishLeft = loadImage("images/sunfish-fat-left.png");
+
 
     }
 
             // make fish flip at 550 in x axis
 
         float sunFishX = 250;
-        float sunFishSpeedX = 5;
+        float sunFishSpeedX = 4;
 
     @Override
     public void draw() {
@@ -43,10 +48,15 @@ public class Sketch extends PApplet {
         if (keyPressed){
             if (keyCode == UP){
                 image(sunFishSurprised, sunFishX, 150, 50, 50);
-
+                fishMovement();
             }
         }
         
+        //if (keyPressed){
+            //if (keyCode == LEFT){
+
+            //}
+        //}
         
         if (keyPressed){
             if (keyCode == UP){
@@ -89,6 +99,30 @@ public class Sketch extends PApplet {
         noStroke();
         rect(0, 0, 600, 10);
     }
+
+    private void clamBase(){
+        fill(157, 88, 214);         // clam bottom
+        stroke(0,0,0);
+        rect(50,270,200,50);
+        fill(156, 117, 189);
+        stroke(0,0,0);
+        rect(40, 250, 220, 20);
+        //fill(156, 117, 189);        // clam top
+        //stroke(0,0,0);
+        //rect(40, 230, 220, 20);
+        //fill(157, 88, 214);
+        //stroke(0,0,0);
+        //rect(50,190,200,40);
+
+        if (keyPressed){
+            if (key == W){
+                fill(255, 255, 255);        // Pearl inside
+                stroke(0,0,0);
+                ellipse(150, 110, 40, 40);
+            }
+        }
+
+    }
     
     private void treasureChestBase(){
         fill(93, 64, 55);           // Treasure Chest
@@ -109,10 +143,18 @@ public class Sketch extends PApplet {
         sunFishX = sunFishX + sunFishSpeedX;
         if (sunFishX >= 550){
             sunFishSpeedX = sunFishSpeedX * -1;
+            sunFish = sunFishLeft;
         }
-        if (sunFishX <= 50){
-            sunFishSpeedX = sunFishSpeedX * 1;
+        if (sunFishX <= 0){
+            sunFishSpeedX = (sunFishSpeedX * -1) * 1;
+            image(sunFish, 0, 150, 50, 50);
         }
+    }
+
+    private void instructions(){
+        textSize(30);
+        fill(13, 71, 161);
+        text("UP/DOWN = Chest", 30, 50);
     }
 
     /** Additional helper methods below */
