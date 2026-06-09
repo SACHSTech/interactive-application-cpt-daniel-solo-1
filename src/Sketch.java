@@ -21,11 +21,6 @@ public class Sketch extends PApplet {
 
     @Override
     public void setup() {
-
-        tankBase();
-        treasureChestBase();
-        clamBase();
-        instructions();
         
         sunFish = loadImage("images/sunfish-fat.png");
         sunFishSurprised = loadImage("images/sunfish-fat-ah.png");
@@ -41,9 +36,15 @@ public class Sketch extends PApplet {
 
     @Override
     public void draw() {
+        background(154, 205, 248);
         System.out.println("x position of sun fish = " + sunFishX);
         image(sunFish, sunFishX, 150, 50, 50);
         fishMovement();
+
+        tankBase();
+        treasureChestBase();
+        clamBase();
+        instructions();
 
         if (keyPressed){
             if (keyCode == UP){
@@ -87,9 +88,6 @@ public class Sketch extends PApplet {
     }
 
     private void tankBase(){
-        fill(154, 205, 248);        // Water Background
-        noStroke();
-        rect(0, 0, 600, 400);
 
         fill(114, 97, 55);          // Gravel Ground
         stroke(0, 0, 0);
@@ -114,13 +112,15 @@ public class Sketch extends PApplet {
         //stroke(0,0,0);
         //rect(50,190,200,40);
 
-        if (keyPressed){
-            if (key == W){
-                fill(255, 255, 255);        // Pearl inside
-                stroke(0,0,0);
-                ellipse(150, 110, 40, 40);
-            }
-        }
+        char myCharVariable = 'A';
+
+        //if (keyPressed){
+            //if (key == A){
+                //fill(255, 255, 255);        // Pearl inside
+                //stroke(0,0,0);
+                //ellipse(150, 110, 40, 40);
+            //}
+        //}
 
     }
     
